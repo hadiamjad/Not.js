@@ -93,7 +93,7 @@ Some important commands:
 
 ### 5. Reproducible Badge: Generating Figures and Tables
 > Make sure your docker build was successful.
-
+- Run `cd ../..`
 - Run `python3 -W ignore classifier.py` to generate the tables and figures. It will do the following:
 
     #### Downloading models and dataset

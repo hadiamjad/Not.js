@@ -11,9 +11,9 @@ RUN apt-get install -y graphviz
 RUN apt-get install -y graphviz-dev
 RUN apt install -y xvfb
 
-RUN pip3 install numpy
+RUN pip3 install numpy==1.25.2
 RUN pip3 install pandas
-RUN pip install scikit-learn
+RUN pip install scikit-learn==1.3.0
 RUN pip3 install adblockparser
 RUN pip3 install openpyxl
 RUN pip3 install pyvirtualdisplay
