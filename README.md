@@ -4,7 +4,7 @@
 Abdul Haddi Amjad, Shaoor Munir, Zubair Shafiq, Muhammad Ali Gulzar
 ACM Conference on Computer and Communications Security (CCS), 2024`
 
-The ArXiv version of the manuscript is avaibable at : [Blocking Tracking JavaScript at the Function Granularity](https://arxiv.org/pdf/2405.18385)
+
 
 # Artifiacts Badge Request:
 ## 1. Available
@@ -40,7 +40,7 @@ These artifacts are rigrously tested on Macbook with following configuration:
 > Note that the Docker base image in the dockerfile supports `amd64` i.e, x86-64 machines.
 
 - Make sure Docker has these minimum requirements:
-<img src="images/2_docker.png" alt="Alt text" width="350" height="300">
+    <img src="images/2_docker.png" alt="Alt text" width="350" height="300">
 
 - This command `docker build -t notjs .` will build docker image using Dockerfile.
   Expected time: 50 seconds
@@ -124,11 +124,11 @@ Some important commands:
 
     `docker cp {container_id}:/Crawler/plots .` 
 
-    The container id is located on the docker shell:
-
-    `root@{container-id}:/Crawler/plots#`
-    
     ![Alt text](images/18_copy.png)
+    
+    > The container id is located on the docker shell:
+`root@{container-id}:/Crawler/plots#`
+    
 
 ### 6. Artifact Support
 - contact: hadiamjad@vt.edu
