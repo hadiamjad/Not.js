@@ -34,38 +34,6 @@ gdown.download(test_obfuscation, 'data/test_obfuscation.csv', quiet=False)
 
 np.random.seed(42)
 
-def generateFeatureCDF(name, label ,xlim, output):
-  # Load data
-  df = pd.read_csv('data/notjs.csv')
-  df = df.loc[:, ['script_name','method_name', 'label', name]]
-  # Map the labels
-  label_mapping = {0: 'non-tracking', 1: 'tracking'}
-  df['label'] = df['label'].replace(label_mapping)
-
-  # Create the CDF plot with y-axis ranging from 0 to 1
-  kdep = sns.kdeplot(data=df, x=name, hue='label',
-      cumulative=True, common_norm=False, common_grid=True)
-
-  plt.xlim(0, xlim)
-  plt.xlabel(label)
-  plt.savefig('plots/'+ output + '.png')
-  plt.show()
-
-def generateSurrogateCDF(name1, name2, label, xlim, output):
-  df = pd.read_csv("data/surrogate-generate-cdf.csv")
-
-  # Melt the DataFrame to make it suitable for sns.ecdfplot
-  df_melted = df.melt(id_vars=['website'], value_vars=[name1, name2])
-
-  # Create the CDF plot
-  kdep = sns.ecdfplot(data=df_melted, x='value', hue='variable')
-  plt.xlabel(label)
-  plt.ylabel('CDF')
-  plt.xlim(0, xlim)
-  # plt.title('CDF of functional requests')
-  plt.savefig('plots/' + output + '_cdf.png')
-  plt.show()
-
 def getResults(path):
   df = pd.read_csv(path)
 
@@ -257,11 +225,3 @@ for key in values_output_surr:
     print(f"{key} - Mean: {stats[0]}, Median: {stats[1]}")
 
 print('#################### Generating Plots ####################')
-generateFeatureCDF('Feature 21', 'Number of Successor Function', 2000, 'Figure_7_a')
-generateFeatureCDF('Feature 23', 'Number of Storage Access',200, 'Figure_7_b')
-
-generateSurrogateCDF('normal_tracking functions', 'surr_tracking functions', 'Number of Tracking Functions', 5000, 'Figure_8_a')
-generateSurrogateCDF('normal_tracking requests', 'surr_tracking requests', 'Number of Tracking Requests', 400, 'Figure_8_b')
-generateSurrogateCDF('normal_functional requests', 'surr_functional requests', 'Number of Non-tracking Requests', 1000, 'Figure_8_c')
-
-print('#################### All Plots Generated Successfully ####################')

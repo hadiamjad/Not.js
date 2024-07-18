@@ -42,11 +42,14 @@ These artifacts are rigrously tested on Macbook with following configuration:
 - Make sure Docker has these minimum requirements:
     <img src="images/2_docker.png" alt="Alt text" width="350" height="300">
 
-- This command `docker build -t notjs .` will build docker image using Dockerfile.
+- This command 
+`docker build -t notjs .` 
+will build docker image using Dockerfile.
   Expected time: 50 seconds
   ![Alt text](images/3_build.png)
 
-- Run the docker image using `docker run -it notjs` .
+- Run the docker image using 
+`docker run -it notjs`
   ![Alt text](images/4_docker.png)
 
 - Try running `ls` command in the docker terminal and it will list all the files inside this repository.
@@ -62,17 +65,25 @@ Some important commands:
 > Make sure your docker build was successful.
 
 #### Step 1: Run server
-- Create new tmux session for running the server `tmux new -s server`. This will automatically join the session as well.
+- Create new tmux session for running the server 
+`tmux new -s server`
+This will automatically join the session as well.
 
-- Run the following command `bash server.sh` this will install the necessary pakages and start the server.
+- Run the following command 
+`bash server.sh` 
+This will install the necessary pakages and start the server.
  ![Alt text](images/5_server.png)
 
 - Leave the `server` session using `Cntrl + b` followed by `d`.
 
 #### Step 2: Run client
-- Create new tmux session for running the client `tmux new -s client`. This will automatically join the session as well.
+- Create new tmux session for running the client 
+`tmux new -s client`
+This will automatically join the session as well.
 
-- Run the following command `bash client.sh`. This will perform the following actions:
+- Run the following command:
+`bash client.sh`
+This will perform the following actions:
     1. Crawl the website listed in `test.csv`. Currently, it has two websites: `canvas.com` and `bidtheatre.com`.
     2. Install the `not.js` model.
     3. Generate a `page graph` for the website.
@@ -87,14 +98,17 @@ Some important commands:
     ![Alt text](images/6_client.png)
 
 #### Step 3: Collecting surrogates
-- Now, within the same tmux session named client, navigate to the `cd server/surrogates` directory where surrogates are available.   
-- Run command `tree` to print the surrogates into a folder structure compatible with Google Chrome.
+- Now, within the same tmux session named client, run 
+`tree server/surrogates` 
+to print the surrogates into a folder structure compatible with Google Chrome.
+
 ![Alt text](images/7_tree.png)
 
 ### 5. Reproducible Badge: Generating Figures and Tables
 > Make sure your docker build was successful.
-- Run `cd ../..`
-- Run `python3 -W ignore classifier.py` to generate the tables and figures. It will do the following:
+- Run 
+`bash reproducible.sh` 
+to generate the tables and figures. It will do the following:
 
     #### Downloading models and dataset
     ![Alt text](images/8_data.png)
@@ -107,14 +121,16 @@ Some important commands:
     ![Alt text](images/11_table-4.png)
     ![Alt text](images/12_table-4.png)
 
+    > The last two rows are the accuracies of other tools. 
+
     ### Table 5
     > In this table last-row is the standard one already computed above.
     ![Alt text](images/13_table-5.png)
     ![Alt text](images/14_table-5.png)
 
-    ### Table 6
+    <!-- ### Table 6
     ![Alt text](images/15_table-6.png)
-    ![Alt text](images/16_table-6.png)
+    ![Alt text](images/16_table-6.png) -->
 
     ### Generating plots
     ![Alt text](images/17_plots.png)
