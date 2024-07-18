@@ -33,7 +33,7 @@ These artifacts are rigrously tested on Macbook with following configuration:
 > Note that the Docker base image in the dockerfile supports `amd64` i.e, x86-64 machines.
 
 ### 1. Clone the the github repository
-`git clone https://github.com/hadiamjad/Not.js.git` and move in the directory using `cd` command
+`git clone https://github.com/hadiamjad/Not.js.git` and move in the directory using `cd Not.js` command
 
 ### 2. Build the docker using Dockerfile
 > Note that the Docker base image in the dockerfile supports `amd64` i.e, x86-64 machines.
