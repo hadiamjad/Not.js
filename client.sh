@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir logs
 mkdir data
+mkdir plots
 # Path to the CSV file containing the values
 CSV_FILE="test.csv"
 # Check if the CSV file exists
