@@ -19,9 +19,8 @@ We reproduce the results illustrated in the figures and tables from the paper as
 1. Table 3
 2. Table 4
 3. Table 5
-4. Table 6
-5. Figure 7
-6. Figure 8
+4. Figure 7
+5. Figure 8
 
 # Installation
 ### 0. Minimum requirements
