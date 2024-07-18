@@ -132,6 +132,8 @@ to generate the tables and figures. It will do the following:
     ![Alt text](images/16_table-6.png) -->
 
     ### Generating plots
+    You can run to see plots are generated 
+    `tree plots`
     ![Alt text](images/17_plots.png)
 
     ### Retrieving plots
