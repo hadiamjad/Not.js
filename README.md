@@ -8,7 +8,7 @@ ACM Conference on Computer and Communications Security (CCS), 2024`
 
 # Artifiacts Badge Request:
 ## 1. Available
-This is a public repository, accessible to everyone.
+This is a public repository and zenodo (https://zenodo.org/records/12775210), accessible to everyone.
 
 ## 2. Functional
 We have generated a Dockerfile to run end-to-end Node.js and follow the methodology mentioned in the paper. You need to input the website to be crawled, and you will receive output in the form of surrogate scripts for the website with tracking functions neutralized.
