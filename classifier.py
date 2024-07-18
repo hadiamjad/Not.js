@@ -183,45 +183,4 @@ print(f"Precision: {precision:.2f}")
 print(f"Recall: {recall:.2f}")
 print(f"F1-Score: {f1_score:.2f}")
 
-print(f'#################### Table 6 ####################')
-# Load the JSON files
-# Read values_output.json into a dictionary
-with open('data/performance_output.json', 'r') as f:
-    values_output = json.load(f)
-# Read values_output_surr.json into a dictionary
-with open('data/performance_output_surr.json', 'r') as f:
-    values_output_surr = json.load(f)
-# Function to remove outliers using the IQR method
-def remove_outliers(data):
-    q1 = np.percentile(data, 25)
-    q3 = np.percentile(data, 75)
-    iqr = q3 - q1
-    lower_bound = q1 - 1.5 * iqr
-    upper_bound = q3 + 1.5 * iqr
-    return [x for x in data if lower_bound <= x <= upper_bound]
-# Function to calculate mean, median, and mode
-def calculate_statistics(data):
-    if not data:
-        return "No data"
-    try:
-        mean = np.mean(data)
-        median = np.median(data)
-        mode = statistics.mode(data)
-        return mean, median, mode
-    except statistics.StatisticsError:
-        # If there's no unique mode
-        return mean, median, "No unique mode"
-# Compute and print the statistics for output after removing outliers
-print("Statistics for Normal:")
-for key in values_output:
-    filtered_values_output = remove_outliers(values_output[key])
-    stats = calculate_statistics(filtered_values_output)
-    print(f"{key} - Mean: {stats[0]}, Median: {stats[1]}")
-# Compute and print the statistics for output_surr after removing outliers
-print("Statistics for Surrogate:")
-for key in values_output_surr:
-    filtered_values_output_surr = remove_outliers(values_output_surr[key])
-    stats = calculate_statistics(filtered_values_output_surr)
-    print(f"{key} - Mean: {stats[0]}, Median: {stats[1]}")
-
 print('#################### Generating Plots ####################')
